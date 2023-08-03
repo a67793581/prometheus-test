@@ -27,15 +27,13 @@ type Config struct {
 }
 
 type CommonConfig struct {
-	CrashLogPath     string `toml:"crash_log_path"`
-	RpcWorkPoolCount int64  `toml:"consumer_work_pool_count"`
-	Env              string `toml:"env"`
-	ServerName       string `toml:"server_name"`
+	CrashLogPath string `toml:"crash_log_path"`
+	Env          string `toml:"env"`
+	ServerName   string `toml:"server_name"`
 }
 
 type ServerConfig struct {
 	GPort    int `toml:"gport"`
-	MPort    int `toml:"mport"`
 	WTimeout int `toml:"wTimeout"`
 	RTimeout int `toml:"wTimeout"`
 }

@@ -75,7 +75,7 @@ func createMysqlEngine(conf config.MySqlConfig) (*gorm.DB, error) {
 	return engine, nil
 }
 
-func GetMysqlEngine(db string, ctx context.Context) (*gorm.DB, error) {
+func GetMysqlEngine(ctx context.Context, db string) (*gorm.DB, error) {
 	if engine, ok := engineManager[db]; ok && engine != nil {
 		ctxPm := ctx
 		if gctx, ok := ctx.(*gin.Context); ok {
@@ -86,4 +86,8 @@ func GetMysqlEngine(db string, ctx context.Context) (*gorm.DB, error) {
 		return engine, nil
 	}
 	return nil, ErrNotFoundEngine
+}
+
+func GetMysqlEngineTest(ctx context.Context) (*gorm.DB, error) {
+	return GetMysqlEngine(ctx, "test")
 }

@@ -11,21 +11,17 @@ cluster="default"
 
 [common]
     crash_log_path                  = "./logs/dispatcher.log"
-    action_work_pool_count          = 3000
-    consumer_work_pool_count        = 2000
     env                             ="dev"
     server_name                     ="xx_server"
 
 [server]
-    enable          =  true
     gport           =  9000     #
-    mport           =  12345    #
     wTimeout        =  120      #ms
     rTimeout        =  120      #ms
 
 
 [mysql]
-    [mysql.clotho_group]
+    [mysql.test]
         db_name = "test"
         host = "localhost"
         read_host = "localhost"

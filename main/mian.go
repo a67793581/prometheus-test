@@ -9,7 +9,6 @@ import (
 	"prometheus-test/infrastructure/config"
 	"prometheus-test/infrastructure/drivers"
 	"prometheus-test/infrastructure/environment"
-	"prometheus-test/infrastructure/error_code"
 	"prometheus-test/infrastructure/http_client/trace_http"
 	"prometheus-test/infrastructure/metrics"
 	"prometheus-test/infrastructure/recycle"
@@ -53,7 +52,6 @@ func main() {
 		return
 	}
 	defer logger.Close()
-	error_code.ErrCodeInit()
 	trace_http.Init()
 	InitMetrics()
 	if InitMysql() {

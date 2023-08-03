@@ -1,0 +1,14 @@
+POST http://127.0.0.1:9000/GenerateImagesUsingText
+Accept: application/json
+Content-Type: application/x-www-form-urlencoded
+
+keywords=男性 帅气
+###
+
+
+GET http://127.0.0.1:9000/metrics
+
+###
+GET http://127.0.0.1:9000/getImages
+
+###
