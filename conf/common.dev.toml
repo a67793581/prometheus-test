@@ -1,0 +1,41 @@
+cluster="default"
+
+[log]
+    level = "debug"
+    business = "./logs/business-%Y%m%d.log-%H%M"
+    access = "./logs/access-%Y%m%d.log-%H%M"
+    business_link = "./logs/business.log"
+    access_link = "./logs/access.log"
+    size = 10 #GB
+    rotation_count = 10
+
+[common]
+    crash_log_path                  = "./logs/dispatcher.dump"
+    action_work_pool_count          = 3000
+    consumer_work_pool_count        = 2000
+    env                             ="dev"
+    server_name                     ="xx_server"
+
+[server]
+    enable          =  true
+    gport           =  9000     #
+    mport           =  12345    #
+    wTimeout        =  120      #ms
+    rTimeout        =  120      #ms
+
+
+[mysql]
+    [mysql.clotho_group]
+        db_name = "test"
+        host = "localhost"
+        read_host = "localhost"
+        port = 3306
+        user = "root"
+        passwd = "123456"
+        conn_timeout = "5s"
+        read_timeout = "5s"
+        write_timeout = "5s"
+        max_conn_num = 200
+        max_idle_conn_num = 10
+        max_conn_life_time = 50
+        log_level = 4 #1Silent  2Error 3Warn  4Info
