@@ -1,8 +1,0 @@
-2023/08/03 15:27:25 [DS]Init metrics success!
-2023/08/03 15:27:25 engineManager=map[clotho_group:0x140006d17a0]
-2023/08/03 15:27:25 [DS]Init mysql success!
-2023/08/03 15:27:25 [DS]Ready to start http server !
-2023/08/03 15:27:23 [DS]Start http server successfully
-2023/08/03 15:27:23 [DS]Ready to close Server
-2023/08/03 15:27:23 [DS]BizLogger Close Sync failed,err=sync /dev/stdout: inappropriate ioctl for device
-2023/08/03 15:27:23 [DS]AccessLogger Close Sync failed,err=sync /dev/stdout: inappropriate ioctl for device
