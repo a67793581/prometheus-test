@@ -10,7 +10,7 @@ cluster="default"
     rotation_count = 10
 
 [common]
-    crash_log_path                  = "./logs/dispatcher.dump"
+    crash_log_path                  = "./logs/dispatcher.log"
     action_work_pool_count          = 3000
     consumer_work_pool_count        = 2000
     env                             ="dev"

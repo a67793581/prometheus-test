@@ -22,4 +22,4 @@ go.work
 vendor
 go_build_prometheus_test_main
 .idea
-logs
+logs/*.log
