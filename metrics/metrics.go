@@ -31,19 +31,15 @@ func Init(srvName string) error {
 }
 
 func register() {
-	//provider service  ，
 	prometheus.Registe(prometheus.TypeSummary, MonitorNameInterface, []string{"interface", "status"}, nil)
 	prometheus.Registe(prometheus.TypeQPS, MonitorNameInterfaceQps, []string{"interface", "status"}, nil)
 	prometheus.Registe(prometheus.TypeQPS, MonitorNameInterfaceErrorCode, []string{"interface", "status"}, nil)
 
-	// ，，
 	prometheus.Registe(prometheus.TypeSummary, MonitorNameDependence, []string{"dependence_service", "function", "status"}, nil)
 	prometheus.Registe(prometheus.TypeQPS, MonitorNameDependenceQps, []string{"dependence_service", "function", "status"}, nil)
 
-	//go monitor
 	prometheus.Registe(prometheus.TypeTotal, MonitorNameStatistics, []string{"module"}, nil)
 
-	//mysql ， gorm，
 	prometheus.Registe(prometheus.TypeSummary, MonitorNameDb, []string{"table", "function", "status"}, nil)
 	prometheus.Registe(prometheus.TypeQPS, MonitorNameDbQps, []string{"table", "function", "status"}, nil)
 }

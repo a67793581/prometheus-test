@@ -27,9 +27,9 @@ type prometheusInner struct {
 	serverName   string
 	idc          string
 	ip           string
-	qpsVec       map[string]*prometheus.CounterVec   //sum count
-	totalVec     map[string]*prometheus.HistogramVec //sum count bulk
-	summaryVec   map[string]*prometheus.SummaryVec   //summary vec
+	qpsVec       map[string]*prometheus.CounterVec
+	totalVec     map[string]*prometheus.HistogramVec
+	summaryVec   map[string]*prometheus.SummaryVec
 	qpsMutex     sync.Mutex
 	totalMutex   sync.Mutex
 	summaryMutex sync.Mutex
@@ -199,7 +199,7 @@ func Inc(pType Type, name string, kv map[string]string) error {
 	case TypeTotal:
 		return inner.updateTotal(name, kv, 1)
 	case TypeSummary:
-		return inner.updateSummary(name, kv, 1) //
+		return inner.updateSummary(name, kv, 1)
 	}
 	return nil
 }

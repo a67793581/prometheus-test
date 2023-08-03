@@ -24,8 +24,7 @@ type LoggerConf struct {
 	Size          int    `toml:"size"`
 	AccessLink    string `toml:"access_link"`
 	RotationCount uint   `toml:"rotation_count"`
-	//
-	Console bool `toml:"console"`
+	Console       bool   `toml:"console"`
 }
 
 func Init(cfg LoggerConf) error {
@@ -72,14 +71,12 @@ func initLogger(logFile string, logFileLink string, level zapcore.Level, size in
 		if err != nil {
 			return nil, err
 		}
-		// add the encoder config and rotator to create a new zap logger
 		w = zapcore.AddSync(rotator)
 	}
 
 	Encoder := GetEncoder()
 
 	core := zapcore.NewCore(
-		// zapcore.NewJSONEncoder(enc),
 		Encoder,
 		w,
 		level,
@@ -97,11 +94,10 @@ func GetEncoder() zapcore.Encoder {
 			FunctionKey:    zapcore.OmitKey,
 			MessageKey:     "msg",
 			StacktraceKey:  "stacktrace",
-			LineEnding:     zapcore.DefaultLineEnding,      // "\n"
-			EncodeLevel:    cEncodeLevel,                   // ，:InfoLevel "info"
-			EncodeTime:     cEncodeTime,                    //
-			EncodeDuration: zapcore.SecondsDurationEncoder, // ，Duration
-			// EncodeCaller:   zapcore.ShortCallerEncoder,     //
+			LineEnding:     zapcore.DefaultLineEnding,
+			EncodeLevel:    cEncodeLevel,
+			EncodeTime:     cEncodeTime,
+			EncodeDuration: zapcore.SecondsDurationEncoder,
 		})
 }
 func cEncodeTime(t time.Time, enc zapcore.PrimitiveArrayEncoder) {
@@ -131,7 +127,6 @@ func initAccessLogger(logFile string, logFileLink string, level zapcore.Level, s
 		if err != nil {
 			return nil, err
 		}
-		// add the encoder config and rotator to create a new zap logger
 		w = zapcore.AddSync(rotator)
 	}
 

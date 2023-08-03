@@ -17,26 +17,26 @@ func GinLogger() gin.HandlerFunc {
 		path := c.Request.URL.Path
 		c.Next()
 
-		cost := time.Since(start) //
+		cost := time.Since(start)
 
 		logger.AccessInfo(c, fmt.Sprintf("%s|%s|%.3f|%s|%s|%s|%d|%s|%s|%d|%s|%s|%s|%s|%s|%s|%s|\n",
 			start.Format("2006-01-02T15:04:05.000Z07:00"),
 			clientIP(c),
 			cost.Seconds(),
-			"-", // optional
-			"-", // optional
-			"-", // optional
+			"-",
+			"-",
+			"-",
 			c.Writer.Status(),
-			"-", // optional
+			"-",
 			c.Request.Host,
 			c.Writer.Size(),
 			path,
 			c.Request.Method,
 			util.GetRequestId(c),
-			"-", // reserved
-			"-", // reserved
-			"-", // reserved
-			"-", // reserved
+			"-",
+			"-",
+			"-",
+			"-",
 		))
 	}
 }

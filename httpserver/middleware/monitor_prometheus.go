@@ -11,7 +11,7 @@ func MonitorHandler() gin.HandlerFunc {
 	return func(c *gin.Context) {
 		start := time.Now()
 		path := c.Request.URL.Path
-		// Process request
+
 		c.Next()
 		interval := time.Since(start).Milliseconds()
 		statusCode := c.Writer.Status()

@@ -25,7 +25,7 @@ func (gm *goMonitor) getState() GoStats {
 	runtime.ReadMemStats(&mem)
 	gs := GoStats{}
 	gs.GCNum = mem.NumGC - gm.lastMem.NumGC
-	gs.GCPause = (mem.PauseTotalNs - gm.lastMem.PauseTotalNs) / 1000 //
+	gs.GCPause = (mem.PauseTotalNs - gm.lastMem.PauseTotalNs) / 1000
 	gs.MemAllocated = mem.Alloc
 	gs.MemObjects = mem.HeapObjects
 	gs.MemHeap = mem.HeapAlloc

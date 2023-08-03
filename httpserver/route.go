@@ -36,7 +36,6 @@ func init() {
 		promhttp.Handler().ServeHTTP(ctx.Writer, ctx.Request)
 	})
 
-	//gin
 	registerGinHttpAction("/status.php", MethodGET, func(ctx *gin.Context) {
 		ctx.String(http.StatusOK, "ok\n")
 	})
