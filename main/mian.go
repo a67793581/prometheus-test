@@ -28,7 +28,7 @@ const (
 
 var (
 	Ctx      context.Context
-	confPath = flag.String("c", "/Users/admin/code/my/prometheus-test/conf/common.dev.toml", "config path")
+	confPath = flag.String("c", "./conf/common.dev.toml", "config path")
 )
 
 func main() {
