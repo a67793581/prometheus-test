@@ -3,8 +3,8 @@ package httpserver
 import (
 	"fmt"
 	"net/http"
-	"prometheus-test/config"
-	"prometheus-test/httpserver/middleware"
+	"prometheus-test/infrastructure/config"
+	middleware2 "prometheus-test/server/httpserver/middleware"
 	"time"
 
 	"prometheus-test/lib/logger"
@@ -33,7 +33,7 @@ func newHttpGinServer(port int, rTimeout int, wTimeout int) *HttpServer {
 	engine := gin.New()
 	engine.Use(
 		util.SetReqId(),
-		middleware.GinLogger())
+		middleware2.GinLogger())
 
 	registerMetrics(engine)
 	registerHealthDetect(engine)
@@ -71,7 +71,7 @@ func registerCommonBizRouters(engine *gin.Engine) {
 }
 
 func registerMetrics(engine *gin.Engine) {
-	engine.Use(middleware.MonitorHandler())
+	engine.Use(middleware2.MonitorHandler())
 }
 
 func Start() error {

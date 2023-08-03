@@ -5,7 +5,7 @@ import (
 	"errors"
 	"fmt"
 	"log"
-	"prometheus-test/config"
+	"prometheus-test/infrastructure/config"
 	"time"
 
 	"github.com/gin-gonic/gin"

@@ -1,7 +1,7 @@
 package middleware
 
 import (
-	"prometheus-test/metrics"
+	"prometheus-test/infrastructure/metrics"
 	"time"
 
 	"github.com/gin-gonic/gin"

@@ -1,7 +1,7 @@
 package drivers
 
 import (
-	"prometheus-test/metrics"
+	"prometheus-test/infrastructure/metrics"
 	"time"
 
 	"gorm.io/gorm"

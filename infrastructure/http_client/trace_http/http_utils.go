@@ -5,8 +5,8 @@ import (
 	"encoding/json"
 	"fmt"
 	neturl "net/url"
-	"prometheus-test/config"
-	"prometheus-test/metrics"
+	"prometheus-test/infrastructure/config"
+	"prometheus-test/infrastructure/metrics"
 	"time"
 
 	"prometheus-test/lib/logger"
